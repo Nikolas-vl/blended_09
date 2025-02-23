@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" crossorigin src="/blended_09/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/blended_09/assets/index-970a8346.css">
+    <script type="module" crossorigin src="/blended_09/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/blended_09/assets/vendor-BcYoTxAJ.js">
+    <link rel="stylesheet" crossorigin href="/blended_09/assets/index-C0tDDiZN.css">
   </head>
 
   <body>
     <!-- Завдання 1 -->
     <h2>Завдання 1</h2>
     <ul id="allProducts"></ul>
+    <button id="moreBtn" type="button">Load more</button>
 
     <!-- Завдання 2 -->
     <h2>Завдання 2</h2>
@@ -20,10 +22,11 @@
       <button type="submit">Знайти</button>
     </form>
     <div id="singleProduct"></div>
+    <button type="submit">Load more</button>
 
     <!-- Завдання 3 -->
     <h2>Завдання 3</h2>
-    <form>
+    <form id="newProduct">
       <label>Назва</label>
       <input type="text" name="title" />
 
@@ -105,6 +108,5 @@
     <!-- Завдання 11 -->
     <h2>Завдання 11</h2>
     <ul id="allPosts"></ul>
-    
   </body>
 </html>
