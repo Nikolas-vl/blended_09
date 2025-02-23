@@ -11,12 +11,6 @@ import apiInstance from '../services/api';
 //   }
 // }
 
-//   params: {
-//     limit: 10,
-//     skip: 5,
-//     select: 'title,price'
-//   }
-
 export async function getProducts(page) {
   try {
     const data = await apiInstance.get(`/products/`, {
