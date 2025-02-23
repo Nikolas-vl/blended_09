@@ -1,7 +1,7 @@
 import './styles/normalize.css';
 import './styles/index.css';
-import { getProducts } from './requests/products';
-import { createMarkup } from './services/markupService';
+import { getProducts, getProductById } from './requests/products';
+import { createMarkup, createProductById } from './services/markupService';
 
 const list = document.querySelector('#allProducts');
 
@@ -11,5 +11,16 @@ async function render() {
   console.log(data);
 }
 
-render();
-console.log('hi');
+// render();
+
+// ! 2 task
+
+const formInput = document.querySelector('#singleProductForm');
+const elem = document.querySelector('#singleProduct');
+
+formInput.addEventListener('submit', async e => {
+  e.preventDefault();
+  const id = e.target.elements.id.value.trim();
+  const data = await getProductById(id);
+  elem.insertAdjacentHTML('afterbegin', createProductById(data));
+});
