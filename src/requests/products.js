@@ -1,13 +1,34 @@
 import apiInstance from '../services/api';
 
-export async function getProducts() {
+// ! ===================== 1 task
+
+// export async function getProducts() {
+//   try {
+//     const data = await apiInstance.get(`/products/`);
+//     return data.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+//   params: {
+//     limit: 10,
+//     skip: 5,
+//     select: 'title,price'
+//   }
+
+export async function getProducts(page) {
   try {
-    const data = await apiInstance.get('/products');
+    const data = await apiInstance.get(`/products/`, {
+      params: { limit: 100, skip: (page - 1) * 100 },
+    });
     return data.data;
   } catch (error) {
     console.log(error);
   }
 }
+
+// ! ===================== 2 task
 
 export async function getProductById(id) {
   try {
@@ -15,5 +36,26 @@ export async function getProductById(id) {
     return data.data;
   } catch (error) {
     console.log(error);
+  }
+}
+
+// ! ===================== 3 task
+
+export async function postProduct(product) {
+  try {
+    const data = await apiInstance.post(`/products/add`, product);
+    return data.data;
+  } catch (error) {}
+}
+
+// ! ===================== 4 task
+
+export async function deleteProductById(id) {
+  try {
+    const data = await apiInstance.delete(`/products/${id}`);
+    return data.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
 }

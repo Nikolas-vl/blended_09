@@ -13,6 +13,8 @@ export function createMarkup(products) {
   return markup;
 }
 
+// ! ===================== 2 task
+
 export function createProductById({
   id,
   title,
@@ -30,3 +32,15 @@ export function createProductById({
         <img src="${thumbnail}" alt="${description}">
       </li>`;
 }
+
+// ! ===================== 3 task
+
+export function createNewProduct({ title, description, price }) {
+  return `<li>
+        <h3>${title}</h3>
+        <p>${price}</p>
+        <p>${description}</p>
+      </li>`;
+}
+
+// ! ===================== 4 task
